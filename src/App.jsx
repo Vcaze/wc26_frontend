@@ -4,7 +4,7 @@ import Home from './pages/home.jsx'
 import Predictions from './pages/predictions.jsx'
 import Login from './pages/login.jsx'
 import Register from './pages/register.jsx'
-import './style/app.css'
+import './style/App.css'
 import './style/nav.css'
 
 function App() {
