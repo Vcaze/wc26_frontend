@@ -1,0 +1,35 @@
+/* Navbar container */
+nav {
+  background-color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 80px;
+  min-height: 2.5rem; /* säkerställer att navbar inte ändrar höjd vid hover */
+}
+
+/* Common style for all links and logout span */
+nav a,
+nav span {
+  color: green;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex; 
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 4px;
+  transition: transform 0.1s ease-in-out;
+  transform-origin: center;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Hover effect: pointer and text expands */
+nav a:hover,
+nav span:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
