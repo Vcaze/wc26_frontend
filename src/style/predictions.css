@@ -1,0 +1,224 @@
+/* Page container */
+.predictions-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Title */
+.page-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Error message */
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Container for all groups */
+.groups-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+/* Each group box */
+.group-box {
+  min-width: 240px;
+  max-width: 240px;
+  width: 240px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Group title */
+.group-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Pool container */
+.team-pool {
+  border: 1px dashed #aaa;
+  border-radius: 8px;
+  width: 100%;
+  height: 137px; /* exact fit for 4 items (4*28 + 3*5 + 2*5) */
+  min-height: 137px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow: hidden; /* prevent visual expansion during drag-over */
+}
+
+/* Prevent pool children from vertically stretching */
+.team-pool .team {
+  height: 28px;
+  flex: 0 0 auto;
+}
+
+/* Slots container */
+.team-slots-container {
+  width: 100%;
+}
+
+.slots-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.team-slot {
+  display: flex;
+  align-items: center;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  min-height: 40px;
+  height: 40px;
+  padding: 5px;
+  margin-bottom: 5px;
+  gap: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Drag-over effect */
+.drag-over {
+  background-color: #e0f7ff;
+  border-color: #00aaff;
+}
+
+/* Ensure pool items stack without reflowing widths */
+.team-pool {
+  box-sizing: border-box;
+}
+
+/* Prevent unexpected width changes inside droppables */
+.team-slot > div {
+  max-width: 100%;
+}
+
+/* Individual team */
+.team {
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #eaeaea;
+  cursor: grab;
+  height: 100%;
+  box-sizing: border-box;
+  flex: 1 1 auto; /* fill available horizontal space */
+  min-width: 0;   /* allow text to shrink/ellipsis inside */
+}
+
+.team.dragging {
+  background-color: #b3e5fc;
+  border-color: #039be5;
+}
+
+/* Hide team during hover without changing layout */
+.team-hidden {
+  visibility: hidden;
+}
+
+/* Team flag */
+.team-flag {
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+/* Team name */
+.team-name {
+  font-weight: 500;
+}
+
+/* Empty slot placeholder */
+.empty-slot {
+  color: #999;
+  font-style: italic;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+}
+
+/* Slot number */
+.slot-number {
+  font-weight: bold;
+  width: 20px;
+  text-align: right;
+}
+
+/* Save button */
+.save-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.save-button {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: #0056b3;
+}
+
+.save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.fill-button {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.fill-button:hover {
+  background-color: #1e7e34;
+}
+
+/* Info text under save button */
+.save-info {
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+  max-width: 400px;
+}

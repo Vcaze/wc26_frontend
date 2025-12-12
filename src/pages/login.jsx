@@ -21,8 +21,9 @@ export default function Login({ onLogin }) {
                 return
             }
 
-            // Save JWT token in localStorage
+            // Save JWT token and email in localStorage
             localStorage.setItem('jwtToken', data.jwtToken)
+            localStorage.setItem('userEmail', email)
 
             // Update App state
             onLogin()

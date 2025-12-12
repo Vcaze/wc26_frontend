@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Home from './pages/home.jsx'
 import Predictions from './pages/predictions.jsx'
@@ -8,7 +8,7 @@ import './style/App.css'
 import './style/nav.css'
 
 function App() {
-    // Check if JWT exists in localStorage
+    const navigate = useNavigate()
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     useEffect(() => {
@@ -19,6 +19,7 @@ function App() {
     const handleLogout = () => {
         localStorage.removeItem('jwtToken')
         setIsLoggedIn(false)
+        navigate("/")
     }
 
     return (
